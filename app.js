@@ -46,6 +46,8 @@ correctAnswer = correctanswer.value
 each time function is run, we randomly assign each variable of the array
 to a button. 0 to 3*/
 async function getQuestion() {
+	// variable to check if user has selected an answer
+	let hasAnswered = false;
 	const response = await fetch(
 		'https://opentdb.com/api.php?amount=1&type=multiple'
 	);
@@ -74,10 +76,10 @@ async function getQuestion() {
 		.replace(/&#039;|&quot;/g, "'")
 		.replace(/&amp;/g, '&');
 	const answers = [
-		/*Index 0*/correctAnswer,
-		/*Index 1*/incorrectAnswer1,
-		/*Index 2*/incorrectAnswer2,
-		/*Index 3*/incorrectAnswer3,
+		/*Index 0*/ correctAnswer,
+		/*Index 1*/ incorrectAnswer1,
+		/*Index 2*/ incorrectAnswer2,
+		/*Index 3*/ incorrectAnswer3,
 	];
 
 	const answerButtons = [
@@ -104,7 +106,7 @@ async function getQuestion() {
 	// select score and result elements
 	const showScore = document.querySelector('#show-score');
 	const result = document.querySelector('#result');
-	showScore.textContent = `Score: 0`;
+	showScore.textContent = `Score: ${score}`;
 	result.textContent = '';
 	// function that takes user choice
 	function isCorrect(input) {
@@ -116,12 +118,17 @@ async function getQuestion() {
 			showScore.textContent = `Score: ${score}`;
 			result.textContent = `Wrong. The answer was: ${correctAnswer}.`;
 		}
+		hasAnswered = true;
 	}
 	// add an event listener to each answer button
 	// if user selects right answer, add 1 to score
 	// show a message showing if the user was right/wrong
 	answerButtons.forEach(button =>
-		button.addEventListener('click', () => isCorrect(button.textContent))
+		button.addEventListener('click', () => {
+			if (hasAnswered === false) {
+				return isCorrect(button.textContent);
+			}
+		})
 	);
 }
 

@@ -1,17 +1,17 @@
 @property --gradient-angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 
 }
 
 :root {
-    --clr-1: #052b2f;
-    --clr-2: #073438;
-    --clr-3: #0e4b50;
-    --clr-4: #2d8f85;
-    --clr-5: #637c54;
-  }
+  --clr-1: #052b2f;
+  --clr-2: #073438;
+  --clr-3: #0e4b50;
+  --clr-4: #2d8f85;
+  --clr-5: #637c54;
+}
 
 body {
   font-family: "Oswald", sans-serif;
@@ -25,7 +25,7 @@ body {
   min-height: 100vh;
   background: var(--clr-2);
   background-image: url("background-image.jpg");
-  background-size:100% 100%
+  background-size: 100% 100%
 }
 
 img {
@@ -37,49 +37,49 @@ h1 {
   font-size: 2rem;
   text-align: center;
   margin-top: 2rem;
+  color: #FFD23F
 }
 
 .card {
-    height: 40vh;
-    width: 80vh;
-    aspect-ratio: 1 / 1.5;
-    background: var(--clr-1);
-    border-radius: 0.5rem;
-  
-    position: relative;
-  }
-  
-  .card::before,
-  .card::after {
-    content: "";
-    position: absolute;
-    inset: -0.5rem;
-    z-index: -1;
-    background: conic-gradient(
-      from var(--gradient-angle),
+  height: 40vh;
+  width: 80vh;
+  aspect-ratio: 1 / 1.5;
+  background: var(--clr-1);
+  border-radius: 0.5rem;
+
+  position: relative;
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+  z-index: -1;
+  background: conic-gradient(from var(--gradient-angle),
       var(--clr-3),
       var(--clr-4),
       var(--clr-5),
       var(--clr-4),
-      var(--clr-3)
-    );
-    border-radius: inherit;
-    animation: rotation 20s linear infinite;
+      var(--clr-3));
+  border-radius: inherit;
+  animation: rotation 20s linear infinite;
+}
+
+.card::after {
+  filter: blur(3.5rem);
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
   }
-  
-  .card::after {
-    filter: blur(3.5rem);
+
+  100% {
+    --gradient-angle: 360deg;
   }
-  
-  @keyframes rotation {
-    0% {
-      --gradient-angle: 0deg;
-    }
-    100% {
-      --gradient-angle: 360deg;
-    }
-  }
-  
+}
+
 
 #new-question {
   background-color: #ff7f50;
@@ -95,18 +95,19 @@ h1 {
 h2 {
   font-size: 1.5rem;
   margin-top: 2rem;
+  color: #FFD23F
 }
 
 .buttons {
   display: flex;
   flex-direction: row;
-  justify-content: space-between ;
+  justify-content: space-between;
   align-items: center;
   width: 65em;
 }
 
-#question{
-    letter-spacing: 0.3em;
+#question {
+  letter-spacing: 0.3em;
 }
 
 .button {
@@ -119,6 +120,8 @@ h2 {
   cursor: pointer;
   width: 12em;
   height: 4em;
+  white-space: normal !important;
+  word-wrap: break-word;
 }
 
 .button:hover {
