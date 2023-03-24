@@ -10,7 +10,7 @@
   --clr-2: #073438;
   --clr-3: #0e4b50;
   --clr-4: #2d8f85;
-  --clr-5: #637c54;
+  --clr-5: #FFD23F;
 }
 
 body {
@@ -27,6 +27,7 @@ body {
   background-image: url("background-image.jpg");
   background-size: 100% 100%
 }
+
 
 img {
   max-width: 100%;
