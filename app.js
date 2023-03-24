@@ -74,10 +74,10 @@ async function getQuestion() {
 		.replace(/&#039;|&quot;/g, "'")
 		.replace(/&amp;/g, '&');
 	const answers = [
-		correctAnswer,
-		incorrectAnswer1,
-		incorrectAnswer2,
-		incorrectAnswer3,
+		/*Index 0*/correctAnswer,
+		/*Index 1*/incorrectAnswer1,
+		/*Index 2*/incorrectAnswer2,
+		/*Index 3*/incorrectAnswer3,
 	];
 
 	const answerButtons = [
