@@ -51,7 +51,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
 }
 
 .card::before,
@@ -99,10 +99,10 @@ h1 {
   letter-spacing: 0.1em;
 }
 
-#new-question:hover{
-    width: 10.5em;
-    height: 3.5em;
-    font-size: 1.3em;
+#new-question:hover {
+  width: 10.5em;
+  height: 3.5em;
+  font-size: 1.3em;
 }
 
 h2 {
@@ -123,8 +123,9 @@ h2 {
   letter-spacing: 0.2em;
   padding: 0 30px;
 }
-#show-score{
-    letter-spacing: 0.1em;
+
+#show-score {
+  letter-spacing: 0.1em;
 }
 
 .button {
@@ -139,53 +140,60 @@ h2 {
   height: 5em;
   white-space: normal !important;
   word-wrap: break-word;
-  font-weight:600;
+  font-weight: 600;
   color: #FFD23F;
 }
-#option1{
-    background-color: #0bae29;
-    transition: padding 0.8s, box-shadow 0.4s, transform 0.4s;
-}
-#option1:hover{
-    color: white;
-    padding:0.7em;
-    box-shadow: 0em 0.8em 0.5em -0.4em #42df5f;
-    transform: translateY(-0.3em);
-    cursor: pointer;
-}
-#option2{
-    background-color: #1ac5ca;
-    transition: padding 0.8s, box-shadow 0.4s, transform 0.4s;
-}
-#option3{
-    background-color: #d42020;
-    transition: padding 0.8s, box-shadow 0.4s, transform 0.4s;
-}
-#option4{
-    background-color: #E900FF;
-    transition: padding 0.8s, box-shadow 0.4s, transform 0.4s;
+
+#option1 {
+  background-color: #0bae29;
+  transition: padding 0.8s, box-shadow 0.4s, transform 0.4s;
 }
 
-#option2:hover{
-    color: white;
-    padding:0.7em;
-    box-shadow: 0em 0.8em 0.5em -0.4em #54eee4;
-    transform: translateY(-0.3em);
-    cursor: pointer;
+#option1:hover {
+  color: white;
+  padding: 0.7em;
+  box-shadow: 0em 0.8em 0.5em -0.4em #42df5f;
+  transform: translateY(-0.3em);
+  cursor: pointer;
 }
-#option3:hover{
-    color: white;
-    padding:0.7em;
-    box-shadow: 0em 0.8em 0.5em -0.4em #ee4c4c;
-    transform: translateY(-0.3em);
-    cursor: pointer;
+
+#option2 {
+  background-color: #1ac5ca;
+  transition: padding 0.8s, box-shadow 0.4s, transform 0.4s;
 }
-#option4:hover{
-    color: white;
-    padding:0.7em;
-    box-shadow: 0em 0.8em 0.5em -0.4em #e857f2;
-    transform: translateY(-0.3em);
-    cursor: pointer;
+
+#option3 {
+  background-color: #d42020;
+  transition: padding 0.8s, box-shadow 0.4s, transform 0.4s;
+}
+
+#option4 {
+  background-color: #E900FF;
+  transition: padding 0.8s, box-shadow 0.4s, transform 0.4s;
+}
+
+#option2:hover {
+  color: white;
+  padding: 0.7em;
+  box-shadow: 0em 0.8em 0.5em -0.4em #54eee4;
+  transform: translateY(-0.3em);
+  cursor: pointer;
+}
+
+#option3:hover {
+  color: white;
+  padding: 0.7em;
+  box-shadow: 0em 0.8em 0.5em -0.4em #ee4c4c;
+  transform: translateY(-0.3em);
+  cursor: pointer;
+}
+
+#option4:hover {
+  color: white;
+  padding: 0.7em;
+  box-shadow: 0em 0.8em 0.5em -0.4em #e857f2;
+  transform: translateY(-0.3em);
+  cursor: pointer;
 }
 
 .button:hover {
@@ -196,10 +204,95 @@ h2 {
   background-color: #aaa;
 }
 
-
-@media only screen and (min-width: 768px) {
+/* Add styles for mobile devices */
+@media (max-width: 600px) {
   body {
-    max-width: 768px;
-    margin: auto;
+    font-size: 16px;
+  }
+
+  .card {
+    max-width: 90%;
+    height: 30vh;
+    width: 60vh;
+  }
+
+  #new-question {
+    width: 8em;
+  }
+
+  .button {
+    font-size: 14px;
+    width: 10em;
+    height: 4em;
+  }
+
+  #question {
+    font-size: 1.5rem;
+    padding: 20px;
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Add styles for tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+  .card {
+    max-width: 70%;
+    height: 40vh;
+    width: 70vh;
+  }
+
+  #new-question {
+    width: 9em;
+  }
+
+  .button {
+    font-size: 16px;
+    width: 12em;
+    height: 4.5em;
+  }
+
+  #question {
+    font-size: 1.8rem;
+    padding: 25px;
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 60%;
+  }
+}
+
+/* Add styles for larger screens */
+@media (min-width: 901px) {
+  .card {
+    max-width: 50%;
+    height: 50vh;
+    width: 50vh;
+  }
+
+  #new-question {
+    width: 10em;
+  }
+
+  .button {
+    font-size: 18px;
+    width: 14em;
+    height: 5em;
+  }
+
+  #question {
+    font-size: 2rem;
+    padding: 30px;
+  }
+
+  .buttons {
+    justify-content: space-between;
+    width: 75em;
   }
 }
