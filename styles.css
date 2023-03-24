@@ -268,12 +268,12 @@ h2 {
   }
 }
 
-/* Add styles for larger screens */
+/* Add styles for larger screens  */
 @media (min-width: 901px) {
   .card {
     max-width: 50%;
-    height: 50vh;
-    width: 50vh;
+    height: 40vh;
+    width: 80vh;
   }
 
   #new-question {
